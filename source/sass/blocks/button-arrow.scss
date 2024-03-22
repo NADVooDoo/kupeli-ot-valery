@@ -1,0 +1,99 @@
+.button-arrow {
+  position: relative;
+  display: inline-block;
+  color: $color-default-white;
+  background-color: $color-cerulean-blue;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    color $trans-default,
+    background-color $trans-default;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 3px;
+    width: 30px;
+    height: 30px;
+    background-color: $color-cerulean-blue;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: background-color $trans-default;
+  }
+
+  svg {
+    position: absolute;
+    top: 0;
+    right: 13px;
+    bottom: 0;
+    left: auto;
+    margin: auto 0;
+    color: $color-default-white;
+    transition:
+      color $trans-default,
+      transform $trans-default;
+    stroke-width: 1px;
+  }
+
+  @include vp-767 {
+    &::before {
+      right: -1px;
+      top: -2px;
+    }
+
+    svg {
+      right: 9px;
+      top: -3px;
+    }
+  }
+
+  @include hover-focus {
+    background-color: $color-cerulean-blue;
+    color: $color-default-white;
+
+    &::before {
+      background-color: $color-default-white;
+    }
+
+    svg {
+      color: $color-cerulean-blue;
+      transform: rotate(45deg);
+    }
+  }
+
+  @include active {
+    background-color: $color-cerulean-blue;
+    color: rgba($color-default-white, 0.7);
+
+    &::before {
+      background-color: $color-default-white;
+    }
+
+    svg {
+      color: rgba($color-cerulean-blue, 0.7);
+      transform: rotate(45deg);
+    }
+  }
+
+  @include disabled {
+    pointer-events: none;
+    border-color: $color-mischka;
+    color: $color-mischka;
+
+    &::before {
+      background-color: $color-mischka;
+
+      svg {
+        color: $color-mischka;
+      }
+    }
+
+    svg {
+      color: $color-mischka;
+    }
+  }
+}
