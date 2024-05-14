@@ -11,12 +11,8 @@ $color-transparent:                 rgba(255, 255, 255, 0);
 // для нейминга цветов используем https://www.htmlcsscolor.com/hex/334482
 
 $color-charcoal:                    #484848;
-$color-alabaster:                   #f0efe9;
+$color-amulet:                      #8b9d83;
 $color-cerulean-blue:               #316dc2;
-$color-endeavour:                   #275699;
-$color-mischka:                     #a9afb7;
-$color-wild-watermelon:             #ff5e66;
-$color-black-pearl:                 #0d1d33;
 
 // Overlay
 
@@ -31,9 +27,9 @@ $black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0
 // ---------------------------------
 
 // переменная используемая в html для подключения скейлинга
-$fz-default:                        16px;
+$fz-default:                        18px;
 
-$ff-manrope:                        "Manrope", "Arial", sans-serif;
+$ff-roboto:                        "Roboto", "Arial", sans-serif;
 
 // Animation
 // ---------------------------------

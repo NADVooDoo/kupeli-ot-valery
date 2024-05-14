@@ -43,8 +43,8 @@
 
       @include disabled {
         & + .custom-toggle__icon {
-          background-color: $color-mischka;
-          border-color: $color-mischka;
+          background-color: $color-cerulean-blue;
+          border-color: $color-cerulean-blue;
 
           &::before {
             background-image: url('data:image/svg+xml,\<svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">\<path d="M1 3.5L3.94737 7L9 1" stroke="%23ffffff" stroke-linecap="round" stroke-linejoin="round"/>\</svg>');
@@ -92,8 +92,8 @@
 
         @include disabled {
           & + .custom-toggle__icon {
-            background-color: $color-mischka;
-            border-color: $color-mischka;
+            background-color: $color-cerulean-blue;
+            border-color: $color-cerulean-blue;
 
             &::before {
               background-image: url('data:image/svg+xml,\<svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">\<path d="M1 3.5L3.94737 7L9 1" stroke="%23ffffff" stroke-linecap="round" stroke-linejoin="round"/>\</svg>');
@@ -167,6 +167,6 @@
 }
 
 .custom-toggle.is-invalid .custom-toggle__icon {
-  background: rgba($color-wild-watermelon, 0.2);
-  border: 1px solid $color-wild-watermelon;
+  background: rgba($color-cerulean-blue, 0.2);
+  border: 1px solid $color-cerulean-blue;
 }

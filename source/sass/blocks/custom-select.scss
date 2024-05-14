@@ -47,7 +47,7 @@
 
     &:has(.custom-select__button:disabled) {
       .custom-select__button {
-        background-color: rgba($color-mischka, 0.2);
+        background-color: rgba($color-cerulean-blue, 0.2);
         border-color: rgba($color-charcoal, 0.5);
       }
     }
@@ -111,7 +111,7 @@
     }
 
     @include disabled {
-      background-color: rgba($color-mischka, 0.2);
+      background-color: rgba($color-cerulean-blue, 0.2);
       border-color: rgba($color-charcoal, 0.5);
     }
   }
@@ -235,6 +235,6 @@
 }
 
 .custom-select.is-invalid .custom-select__button {
-  background: rgba($color-wild-watermelon, 0.2);
-  border: 1px solid $color-wild-watermelon;
+  background: rgba($color-cerulean-blue, 0.2);
+  border: 1px solid $color-cerulean-blue;
 }

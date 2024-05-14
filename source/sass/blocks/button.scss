@@ -3,13 +3,12 @@
   display: inline-block;
   padding: 19px 79px 19px 29px;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 14px;
   color: $color-cerulean-blue;
-  text-transform: uppercase;
   letter-spacing: 0.28px;
   background-color: $color-transparent;
-  border: 1px solid $color-cerulean-blue;
+  border: 1px solid $color-amulet;
   border-radius: 30px;
   outline: none;
   cursor: pointer;
@@ -92,11 +91,11 @@
 
   @include disabled {
     pointer-events: none;
-    border-color: $color-mischka;
-    color: $color-mischka;
+    border-color: $color-cerulean-blue;
+    color: $color-cerulean-blue;
 
     &::before {
-      background-color: $color-mischka;
+      background-color: $color-cerulean-blue;
     }
   }
 }
