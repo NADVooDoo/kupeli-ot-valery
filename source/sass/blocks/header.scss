@@ -1,0 +1,89 @@
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 37px;
+  color: $color-default-white;
+  transition: color $trans-default;
+
+  @include vp-1199 {
+    padding-top: 29px;
+  }
+}
+
+.header__logo-link {
+  color: inherit;
+  z-index: 3;
+
+  @include vp-767 {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-row-end: 2;
+    grid-column-end: 3;
+  }
+
+  @include hover-focus {
+    opacity: 0.8;
+    outline: none;
+  }
+
+  @include active {
+    opacity: 0.6;
+  }
+}
+
+.header__toggle {
+  display: none;
+  background-color: initial;
+  border: none;
+  color: $color-default-white;
+  z-index: 3;
+  cursor: pointer;
+
+  @include vp-1199 {
+    display: block;
+    margin-left: -6px;
+  }
+
+  @include vp-767 {
+    margin-top: -13px;
+  }
+
+  @include hover-focus {
+    // color: $color-resolution-blue;
+    outline: none;
+  }
+
+  @include active {
+    // color: $color-navy-blue;
+  }
+}
+
+.header__toggle-closed {
+  display: none;
+  // color: $color-elephant;
+}
+
+.header__tel-link {
+  color: $color-charcoal;
+
+  @include hover-focus {
+    color: $color-amulet;
+    outline: none;
+  }
+
+  @include active {
+    color: $color-cerulean-blue;
+  }
+}
+
+@media (hover: hover) {
+  .nav__link:hover::before {
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #fff;
+  }
+}

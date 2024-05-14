@@ -21,7 +21,46 @@
 <body>
   <div class="wrapper">
     <header class="header">
-
+      <div class="container" data-header-container>
+        <div class="header__wrapper">
+          <a class="header__logo-link" href="index.html" aria-label="На главную страницу">
+            <svg class="header__logo-image" width="319" height="118" aria-hidden="true" focusable="false">
+              <use xlink:href="img/sprite.svg#logo"/>
+            </svg>
+          </a>
+          <nav class="header__nav nav" data-navigation>
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a class="nav__link" href="#projects" data-link-menu>Проекты</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#services" data-link-menu>Услуги</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#price" data-link-menu>Цены</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#about" data-link-menu>О&nbsp;нас</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#contacts" data-link-menu>Контакты</a>
+              </li>
+            </ul>
+          </nav>
+          <button class="header__toggle" type="button" aria-label="Переключить меню" data-burger>
+            <svg class="header__toggle-opened" width="26" height="26" aria-hidden="true" focusable="false">
+              <use xlink:href="img/sprite.svg#burger-menu"/>
+            </svg>
+            <svg class="header__toggle-closed" width="22" height="22" aria-hidden="true" focusable="false"
+              data-close-menu>
+              <use xlink:href="img/sprite.svg#close-menu"/>
+            </svg>
+          </button>
+          <div class="header__tel">
+            <a class="header__tel-link" href="tel:89209528421">+7 920 952-84-21</a>
+          </div>
+        </div>
+      </div>
     </header>
 
     <main>

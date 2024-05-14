@@ -1,0 +1,43 @@
+.nav__list {
+  display: flex;
+  gap: 60px;
+  list-style-type: none;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.nav__link {
+  position: relative;
+  display: inline-block;
+  color: $color-charcoal;
+
+  &::before {
+    content: "";
+    position: absolute;
+    transition: background-color $trans-default;
+  }
+
+  @include focus {
+    outline: 2px solid $color-amulet;
+  }
+
+  @include hover {
+    &::before {
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $color-amulet;
+    }
+
+    opacity: 0.9;
+  }
+
+  @include active {
+    &::before {
+      background-color: $color-transparent;
+    }
+
+    color: $color-cerulean-blue;
+  }
+}
