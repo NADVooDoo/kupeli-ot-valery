@@ -24,7 +24,11 @@
     }
 
     .custom-select__button {
-      border: 1px solid $color-default-white;
+      border: 3px solid $color-default-white;
+
+      @include vp-767 {
+        border: 1px solid rgba($color-default-white, 0.3);
+      }
     }
   }
 
@@ -34,21 +38,29 @@
     }
 
     .custom-select__button {
-      border: 1px solid rgba($color-default-white, 0.3);
+      border: 3px solid rgba($color-default-white, 0.3);
+
+      @include vp-767 {
+        border: 1px solid rgba($color-default-white, 0.3);
+      }
     }
   }
 
   &--secondary {
     @include hover-focus-within {
       .custom-select__button {
-        border-color: $color-charcoal;
+        border-color: $color-amulet;
+
+        @include vp-767 {
+          border: 1px solid $color-amulet;
+        }
       }
     }
 
     &:has(.custom-select__button:disabled) {
       .custom-select__button {
-        background-color: rgba($color-cerulean-blue, 0.2);
-        border-color: rgba($color-charcoal, 0.5);
+        background-color: rgba($color-mischka, 0.2);
+        border-color: rgba($color-amulet, 0.5);
       }
     }
   }
@@ -64,8 +76,8 @@
 
 .custom-select__label {
   margin: 2px 0;
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 15px;
+  line-height: 15px;
   opacity: 0.8;
   transition: opacity $trans-default;
 
@@ -91,13 +103,13 @@
   align-items: center;
   width: 100%;
   min-height: 50px;
-  padding: 14px 20px 15px;
-  font-size: 14px;
-  line-height: 14px;
+  padding: 4px 20px 5px;
+  font-size: 20px;
+  line-height: 20px;
   color: $color-default-white;
-  background-color: $color-transparent;
-  border: 1px solid rgba($color-default-white, 0.3);
-  border-radius: 8px;
+  background-color: $color-transparent-05;
+  border: 3px solid rgba($color-charcoal, 0.3);
+  border-radius: 26px;
   outline: none;
   cursor: pointer;
   transition: border $trans-default;
@@ -107,17 +119,30 @@
     border-color: rgba($color-charcoal, 0.3);
 
     @include hover-focus {
-      border-color: $color-charcoal;
+      border-color: $color-amulet;
+
+      @include vp-767 {
+        border: 1px solid $color-amulet;
+      }
     }
 
     @include disabled {
-      background-color: rgba($color-cerulean-blue, 0.2);
-      border-color: rgba($color-charcoal, 0.5);
+      background-color: rgba($color-mischka, 0.2);
+      border-color: rgba($color-amulet, 0.5);
+
+      @include vp-767 {
+        border: 1px solid rgba($color-amulet, 0.5);
+      }
+    }
+
+    @include vp-767 {
+      border: 1px solid $color-amulet;
+      min-height: 30px;
     }
   }
 
   @include hover-focus {
-    border: 1px solid $color-default-white;
+    border: 3px solid $color-default-white;
   }
 
   @include disabled {
@@ -127,24 +152,31 @@
   }
 
   @include vp-767 {
+    border: 1px solid rgba($color-charcoal, 0.3);
+
     &--secondary {
-      padding: 1px 20px 1px;
-      min-height: 44px;
+      border: 1px solid rgba($color-charcoal, 0.3);
+      font-size: 16px;
+      line-height: 16px;
     }
   }
 }
 
 .custom-select__text {
   flex-shrink: 0;
-  width: 80%;
+  width: 90%;
   overflow: hidden;
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 20px;
+  line-height: 20px;
   text-align: left;
   white-space: nowrap;
   text-overflow: ellipsis;
   opacity: 0;
   transition: opacity 0.3s ease 0.1s;
+
+  @include vp-767 {
+    font-size: 15px;
+  }
 }
 
 .custom-select__icon {
@@ -157,7 +189,7 @@
   clip-path: polygon(100% 0, 100% 20%, 50% 100%, 0 20%, 0 0, 50% 80%);
 
   &--secondary {
-    background-color: $color-charcoal;
+    background-color: $color-amulet;
   }
 }
 
@@ -166,15 +198,15 @@
   bottom: -4px;
   z-index: 1;
   width: 100%;
-  max-height: 194px;
+  max-height: 600px;
   margin: 0;
   padding: 0;
   overflow-y: auto;
   list-style: none;
   color: $color-charcoal;
-  background-color: $color-default-white;
-  border: 1px solid $color-default-white;
-  border-radius: 8px;
+  background-color: $color-desert-storm;
+  border: 3px solid $color-default-white;
+  border-radius: 26px;
   transform: translateY(100%);
   visibility: hidden;
   opacity: 0;
@@ -183,14 +215,18 @@
     opacity $trans-default;
 
   &--secondary {
-    border-color: $color-charcoal;
+    border-color: $color-amulet;
+  }
+
+  @include vp-767 {
+    border: 1px solid $color-amulet;
   }
 }
 
 .custom-select__item {
   padding: 17px 20px;
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 20px;
+  line-height: 20px;
   outline: none;
   cursor: pointer;
   transition:
@@ -199,24 +235,30 @@
 
   &[aria-selected="true"] {
     color: $color-default-white;
-    background-color: $color-cerulean-blue;
+    background-color: $color-amulet;
   }
 
   @include hover {
     &:not([aria-selected="true"]) {
-      color: $color-cerulean-blue;
-      background-color: $color-default-white;
+      color: $color-amulet;
+      background-color:  rgba($color-amulet, 0.3);
     }
   }
 
   @include active {
     color: $color-default-white;
-    background-color: $color-cerulean-blue;
+    background-color: $color-amulet;
   }
 
   @include focus {
     color: $color-default-white;
-    background-color: $color-cerulean-blue;
+    background-color: rgba($color-amulet, 0.3);
+  }
+
+  @include vp-767 {
+    font-size: 15px;
+    padding-left: 5;
+    padding-right: 0;
   }
 }
 
@@ -235,6 +277,10 @@
 }
 
 .custom-select.is-invalid .custom-select__button {
-  background: rgba($color-cerulean-blue, 0.2);
-  border: 1px solid $color-cerulean-blue;
+  background: rgba($color-wild-watermelon, 0.2);
+  border: 3px solid $color-wild-watermelon;
+
+  @include vp-767 {
+    border: 1px solid $color-wild-watermelon;
+  }
 }

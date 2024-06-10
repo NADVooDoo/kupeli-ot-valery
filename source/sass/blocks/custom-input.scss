@@ -9,39 +9,47 @@
     @include hover {
       &:not(:has(input:disabled, textarea:disabled)) {
         .custom-input__label,
-        .custom-textarea__label {
+        .custom-input__label--textarea {
           opacity: 1;
         }
 
         input,
         textarea {
-          border: 1px solid $color-default-white;
+          border: 3px solid $color-amulet;
+
+          @include vp-767 {
+            border: 1px solid $color-amulet;
+          }
         }
       }
     }
 
     @include focus-within {
       .custom-input__label,
-      .custom-textarea__label {
+      .custom-input__label--textarea {
         opacity: 1;
       }
 
       input,
       textarea {
-        border: 1px solid $color-default-white;
+        border: 3px solid $color-amulet;
+
+        @include vp-767 {
+          border: 1px solid $color-amulet;
+        }
       }
     }
 
     &:has(input:disabled, textarea:disabled) {
       .custom-input__label,
-      .custom-textarea__label {
+      .custom-input__label--textarea {
         opacity: 0.8;
       }
 
       input,
       textarea {
-        background-color: rgba($color-default-white, 0.2);
-        border-color: rgba($color-default-white, 0.4);
+        background-color: rgba($color-charcoal, 0.2);
+        border-color: rgba($color-charcoal, 0.4);
         pointer-events: none;
       }
     }
@@ -49,16 +57,21 @@
 
   input,
   textarea {
-    padding: 14px 20px 15px;
-    font-size: 14px;
-    line-height: 14px;
+    padding: 9px 20px 10px;
+    font-size: 21px;
+    line-height: 21px;
+    min-height: 45px;
     color: $color-default-white;
-    background-color: $color-transparent;
-    border: 1px solid rgba($color-default-white, 0.3);
-    border-radius: 8px;
+    background-color: $color-transparent-05;
+    border: 3px solid $color-charcoal;
+    border-radius: 26px;
     outline: none;
     cursor: text;
     transition: border $trans-default;
+
+    @include vp-767 {
+      font-size: 15px;
+    }
   }
 
   textarea {
@@ -71,7 +84,7 @@
         &:not(:has(input:disabled, textarea:disabled)) {
           input,
           textarea {
-            border-color: $color-charcoal;
+            border-color: $color-amulet;
           }
         }
       }
@@ -79,15 +92,15 @@
       @include focus-within {
         input,
         textarea {
-          border-color: $color-charcoal;
+          border-color: $color-amulet;
         }
       }
 
       &:has(input:disabled, textarea:disabled) {
         input,
         textarea {
-          background-color: rgba($color-cerulean-blue, 0.2);
-          border-color: rgba($color-charcoal, 0.5);
+          background-color: rgba($color-mischka, 0.2);
+          border-color: $color-light-grey;
         }
       }
     }
@@ -106,6 +119,8 @@
 
     textarea {
       height: 94px;
+      border: 1px solid $color-amulet;
+      font-size: 15px;
     }
 
     &--secondary {
@@ -115,16 +130,18 @@
 
       input,
       textarea {
-        padding: 11px 20px 12px;
+        padding: 3px 10px 4px;
+        min-height: 30px;
+        border: 1px solid rgba($color-charcoal, 0.3);
       }
     }
   }
 }
 
 .custom-input__label,
-.custom-textarea__label {
-  font-size: 14px;
-  line-height: 14px;
+.custom-input__label--textarea {
+  font-size: 15px;
+  line-height: 15px;
   opacity: 0.8;
   transition: opacity $trans-default;
 
@@ -141,7 +158,11 @@
 .custom-textarea.is-invalid {
   input,
   textarea {
-    background: rgba($color-cerulean-blue, 0.2);
-    border: 1px solid $color-cerulean-blue;
+    background: rgba($color-wild-watermelon, 0.2);
+    border: 3px solid $color-wild-watermelon;
+
+    @include vp-767 {
+      border: 1px solid $color-wild-watermelon;
+    }
   }
 }

@@ -1,0 +1,11 @@
+.hero__button {
+  padding-bottom: 18px;
+  padding-right: 32px;
+  text-transform: uppercase;
+
+  @include vp-767 {
+    padding: 17px 21px 16px;
+    font-size: 12px;
+    line-height: 12px;
+  }
+}

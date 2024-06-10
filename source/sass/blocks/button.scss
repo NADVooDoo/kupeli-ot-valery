@@ -1,15 +1,14 @@
 .button {
   position: relative;
   display: inline-block;
-  padding: 19px 79px 19px 29px;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 14px;
-  color: $color-cerulean-blue;
-  letter-spacing: 0.28px;
-  background-color: $color-transparent;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: $color-default-white;
+  background-color: $color-amulet;
   border: 1px solid $color-amulet;
-  border-radius: 30px;
+  border-radius: 78px;
+  padding: 20px 60px 20px 32px ;
   outline: none;
   cursor: pointer;
   user-select: none;
@@ -22,12 +21,6 @@
     position: absolute;
     top: 50%;
     right: 3px;
-    width: 46px;
-    height: 46px;
-    background-color: $color-cerulean-blue;
-    border-radius: 50%;
-    transform: translateY(-50%);
-    transition: background-color $trans-default;
   }
 
   svg {
@@ -46,45 +39,26 @@
 
   @include vp-767 {
     padding: 15px 57px 13px 19px;
-    font-size: 12px;
-    line-height: 12px;
-    letter-spacing: 0.24px;
-
-    &::before {
-      right: 3px;
-      width: 34px;
-      height: 34px;
-    }
-
-    svg {
-      right: 15px;
-    }
+    font-size: 14px;
+    line-height: 14px;
   }
 
   @include hover-focus {
-    background-color: $color-cerulean-blue;
+    background-color: $color-xanadu;
     color: $color-default-white;
-
-    &::before {
-      background-color: $color-default-white;
-    }
 
     svg {
       color: $color-cerulean-blue;
-      transform: rotate(45deg);
+      transform: rotate(-45deg);
     }
   }
 
   @include active {
-    background-color: $color-cerulean-blue;
+    background-color: $color-amulet;
     color: rgba($color-default-white, 0.7);
 
-    &::before {
-      background-color: $color-default-white;
-    }
-
     svg {
-      transform: rotate(45deg);
+      transform: rotate(0deg);
       color: rgba($color-cerulean-blue, 0.7);
     }
   }
@@ -93,9 +67,5 @@
     pointer-events: none;
     border-color: $color-cerulean-blue;
     color: $color-cerulean-blue;
-
-    &::before {
-      background-color: $color-cerulean-blue;
-    }
   }
 }

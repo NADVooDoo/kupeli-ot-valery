@@ -59,20 +59,48 @@ export class Form {
   }
 
   _onFormSubmit(event, callback = null) {
-    if (this.validateForm(event.target) && callback) {
-      this._callbacks[callback].successCallback(event);
-      if (this._callbacks[callback].reset) {
-        setTimeout(() => {
-          this.reset(event.target);
-        }, this._callbacks[callback].resetTimeout ? this._callbacks[callback].resetTimeout : 500);
+    event.preventDefault(); // Предотвратить стандартную отправку формы
+
+    if (this.validateForm(event.target)) {
+      // Отправка данных формы с помощью EmailJS
+      emailjs.sendForm('service_2hoknrq', 'template_qnmamf8', event.target)
+        .then((response) => {
+          console.log('Заявка успешно отправлена!', response.status, response.text);
+          // Вызов callback функции, если форма валидна и callback определен
+          if (callback) {
+            this._callbacks[callback].successCallback(event);
+          }
+          // Логика перестроения модального окна
+          if (this._callbacks[callback].reset) {
+            setTimeout(() => {
+              this.reset(event.target);
+              const modal = event.target.closest('.modal');
+              if (modal) {
+                // Скрыть все элементы формы, заголовок и текст
+                const formElements = modal.querySelectorAll('.modal__form [data-validate-type], .modal__title, .modal__text, .modal__button');
+                formElements.forEach(element => element.style.display = 'none');
+
+                // Показать сообщение об успешной отправке
+                const successMessage = modal.querySelector('.modal__success');
+                successMessage.style.display = 'block';
+              }
+            }, this._callbacks[callback].resetTimeout ? this._callbacks[callback].resetTimeout : 500);
+          }
+        }, (error) => {
+          console.log('Заявка застряла в интернете...', error);
+          // Вызов callback функции ошибки, если форма не валидна и callback определен
+          if (callback) {
+            this._callbacks[callback].errorCallback(event);
+          }
+        });
+    } else {
+      // Если форма не валидна, вызов callback функции ошибки
+      if (callback) {
+        this._callbacks[callback].errorCallback(event);
       }
-      return;
-    }
-    if (!this.validateForm(event.target) && callback) {
-      this._callbacks[callback].errorCallback(event);
-      return;
     }
   }
+
 
   _onFormInput(item) {
     this.validateFormElement(item);
@@ -112,3 +140,17 @@ export class Form {
     this._validateParent.forEach((parent) => this._initValidate(parent));
   }
 }
+
+// Функция для обновления скрытого поля при выборе комплекта
+function updateSet(value) {
+  document.getElementById('set-hidden').value = value;
+}
+
+// Добавьте эту функцию к каждому элементу списка, чтобы обновлять скрытое поле
+document.querySelectorAll('.custom-select__item').forEach(item => {
+  item.addEventListener('click', function() {
+    updateSet(this.textContent);
+    // Обновите также текст кнопки, чтобы отображать выбранный город
+    document.querySelector('.custom-select__text').textContent = this.textContent;
+  });
+});
