@@ -2756,7 +2756,7 @@ button,
 @media (max-width: 767px) {
   .custom-input__label,
 .custom-input__label--textarea {
-    font-size: 12px;
+    font-size: 14px;
   }
   .custom-input__label--secondary,
 .custom-input__label--textarea--secondary {

@@ -2,6 +2,7 @@ import {Validator} from './validator';
 import {callbacks} from './callback';
 import {initPhoneInput} from './init-phone-input';
 
+let isButtonDisabled = false;
 export class Form {
   constructor() {
     this._validator = new Validator();
@@ -61,7 +62,13 @@ export class Form {
   _onFormSubmit(event, callback = null) {
     event.preventDefault(); // Предотвратить стандартную отправку формы
 
+    if (isButtonDisabled) {
+      console.log('Пожалуйста, подождите...');
+      return;
+    }
+
     if (this.validateForm(event.target)) {
+      isButtonDisabled = true; // Блокировать кнопку
       // Отправка данных формы с помощью EmailJS
       emailjs.sendForm('service_2hoknrq', 'template_qnmamf8', event.target)
         .then((response) => {
@@ -92,6 +99,11 @@ export class Form {
           if (callback) {
             this._callbacks[callback].errorCallback(event);
           }
+        })
+        .finally(() => {
+          setTimeout(() => {
+            isButtonDisabled = false; // Разблокировать кнопку после 5 секунд
+          }, 5000);
         });
     } else {
       // Если форма не валидна, вызов callback функции ошибки
@@ -100,7 +112,6 @@ export class Form {
       }
     }
   }
-
 
   _onFormInput(item) {
     this.validateFormElement(item);
