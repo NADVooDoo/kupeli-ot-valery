@@ -1,6 +1,7 @@
 import {Validator} from './validator';
 import {callbacks} from './callback';
 import {initPhoneInput} from './init-phone-input';
+import {emailjs} from '../../vendor/email-min';
 
 let isButtonDisabled = false;
 export class Form {

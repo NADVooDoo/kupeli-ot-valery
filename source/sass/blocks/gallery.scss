@@ -1,0 +1,68 @@
+.gallery__slider {
+  border: 4px solid $color-amulet;
+  border-radius: 60px;
+  width: 794px;
+  height: 620px;
+
+  @include vp-1659 {
+    width: 557px;
+    height: 435px;
+  }
+
+  @include vp-1279 {
+    width: 424px;
+    height: 331px;
+  }
+
+  @include vp-767 {
+    width: 100%;
+    height: auto;
+
+    img {
+      height: 100%;
+    }
+  }
+}
+
+.gallery__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.gallery__next {
+  top: 40%;
+  margin-left: 32px;
+
+  svg {
+    right: -4px;
+  }
+
+  @include vp-1279 {
+    top: 35%;
+  }
+
+  @include vp-767 {
+    order: 3;
+    margin: 0;
+  }
+}
+
+.gallery__prev {
+  top: 40%;
+  margin-right: 32px;
+
+  svg {
+    left: -2px;
+  }
+
+  @include vp-1279 {
+    top: 35%;
+  }
+
+  @include vp-767 {
+    order: 2;
+    margin: 0;
+  }
+}
+

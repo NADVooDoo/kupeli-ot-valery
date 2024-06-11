@@ -59,12 +59,12 @@
     display: block;
     position: absolute;
     right: 50px;
-    top: 50px;
+    top: 42px;
   }
 
   @include vp-767 {
     right: 21px;
-    top: 21px;
+    top: 16px;
   }
 
   @include hover-focus {
