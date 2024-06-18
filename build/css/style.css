@@ -2290,11 +2290,11 @@ button,
   transition: color 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
   stroke-width: 1px;
 }
-@media (max-width: 767px) {
+@media (max-width: 1199px) {
   .button {
-    padding: 15px 57px 13px 19px;
-    font-size: 14px;
-    line-height: 14px;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    line-height: 12px;
   }
 }
 .button:hover:not([disabled]) {
@@ -3601,12 +3601,12 @@ button,
     right: 0;
     visibility: hidden;
     margin: 0;
-    padding: 122px 45px 66px;
+    padding: 80px 45px 66px;
   }
 }
 @media (max-width: 767px) {
   .nav {
-    padding: 95px 14px 46px;
+    padding: 50px 14px 46px;
   }
 }
 
@@ -3788,9 +3788,13 @@ button,
 }
 
 .hero__button {
-  padding-top: 32px;
-  padding-right: 32px;
+  padding: 32px 32px 30px;
   text-transform: uppercase;
+}
+@media (max-width: 1199px) {
+  .hero__button {
+    padding: 19px 21px 18px 21px;
+  }
 }
 @media (max-width: 767px) {
   .hero__button {
@@ -3802,6 +3806,11 @@ button,
 
 .hero__container {
   padding-top: 50px;
+}
+@media (max-width: 1439px) {
+  .hero__container {
+    padding-top: 40px;
+  }
 }
 
 .hero__wrapper {
@@ -3846,6 +3855,16 @@ button,
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+@media (max-width: 1439px) {
+  .hero__background {
+    top: 70%;
+  }
+}
+@media (max-width: 1279px) {
+  .hero__background {
+    top: 80%;
+  }
 }
 
 .hero__title {
@@ -3918,7 +3937,7 @@ button,
 }
 @media (max-width: 767px) {
   .hero__about {
-    margin-bottom: 66px;
+    margin-bottom: 50px;
   }
 }
 
@@ -3966,12 +3985,12 @@ button,
 }
 @media (max-width: 1659px) {
   .gallery__next {
-    top: 180px;
+    top: 170px;
   }
 }
 @media (max-width: 1279px) {
   .gallery__next {
-    top: 32%;
+    top: 40%;
   }
 }
 @media (max-width: 929px) {
@@ -4007,12 +4026,12 @@ button,
 }
 @media (max-width: 1659px) {
   .gallery__prev {
-    top: 180px;
+    top: 170px;
   }
 }
 @media (max-width: 1279px) {
   .gallery__prev {
-    top: 32%;
+    top: 40%;
   }
 }
 @media (max-width: 929px) {
