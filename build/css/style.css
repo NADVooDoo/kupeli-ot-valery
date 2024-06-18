@@ -3185,6 +3185,7 @@ button,
   .custom-select__button--secondary {
     border: 1px solid #8b9d83;
     min-height: 30px;
+    padding: 4px 20px 4px;
   }
 }
 .custom-select__button:hover:not([disabled]) {
@@ -3791,6 +3792,10 @@ button,
 }
 .feedback__button:active:not([disabled]) svg {
   color: rgba(255, 255, 255, 0.7);
+}
+
+.hero {
+  padding-bottom: 150px;
 }
 
 .hero__button {
