@@ -3503,8 +3503,7 @@ button,
 }
 
 .hero__button {
-  padding-top: 32px;
-  padding-right: 32px;
+  padding: 32px 32px 30px;
   text-transform: uppercase;
 }
 
@@ -3650,11 +3649,11 @@ button,
   }
 
   .gallery__next {
-    top: 180px;
+    top: 170px;
   }
 
   .gallery__prev {
-    top: 180px;
+    top: 170px;
   }
 }
 
@@ -3670,6 +3669,14 @@ button,
   .nav__list {
     font-size: 20px;
     gap: 40px;
+  }
+
+  .hero__container {
+    padding-top: 40px;
+  }
+
+  .hero__background {
+    top: 70%;
   }
 
   .hero__title {
@@ -3701,6 +3708,10 @@ button,
     height: 12px;
   }
 
+  .hero__background {
+    top: 80%;
+  }
+
   .hero__title {
     font-size: 32px;
     line-height: 35px;
@@ -3722,17 +3733,23 @@ button,
   }
 
   .gallery__next {
-    top: 32%;
+    top: 40%;
   }
 
   .gallery__prev {
-    top: 32%;
+    top: 40%;
   }
 }
 
 @media (max-width: 1199px) {
   .container {
     padding: 0 64px;
+  }
+
+  .button {
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    line-height: 12px;
   }
 
   .modal__content {
@@ -3830,7 +3847,7 @@ button,
     right: 0;
     visibility: hidden;
     margin: 0;
-    padding: 122px 45px 66px;
+    padding: 80px 45px 66px;
   }
 
   .feedback {
@@ -3862,6 +3879,10 @@ button,
     margin: 0 0 34px;
     line-height: 20px;
   }
+
+  .hero__button {
+    padding: 19px 21px 18px 21px;
+  }
 }
 
 @media (max-width: 929px) {
@@ -3890,12 +3911,6 @@ button,
 @media (max-width: 767px) {
   .container {
     padding: 0 17px;
-  }
-
-  .button {
-    padding: 15px 57px 13px 19px;
-    font-size: 14px;
-    line-height: 14px;
   }
 
   .arrow {
@@ -4151,7 +4166,7 @@ button,
   }
 
   .nav {
-    padding: 95px 14px 46px;
+    padding: 50px 14px 46px;
   }
 
   .feedback {
@@ -4216,7 +4231,7 @@ button,
   }
 
   .hero__about {
-    margin-bottom: 66px;
+    margin-bottom: 50px;
   }
 
   .gallery__slider {
