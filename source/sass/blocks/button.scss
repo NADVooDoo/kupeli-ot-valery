@@ -9,7 +9,7 @@
   background-color: $color-amulet;
   border: 1px solid $color-amulet;
   border-radius: 78px;
-  padding: 30px 60px 30px 32px ;
+  padding: 20px 60px 20px 32px ;
   outline: none;
   cursor: pointer;
   user-select: none;
@@ -39,9 +39,14 @@
   }
 
   @include vp-1199 {
+    padding: 21px 60px 19px 32px ;
     letter-spacing: 0.5px;
-    font-size: 12px;
-    line-height: 12px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  @include vp-767 {
+    padding: 17px 35px 16px 12px;
   }
 
   @include hover-focus {

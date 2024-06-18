@@ -2260,7 +2260,7 @@ button,
   background-color: #8b9d83;
   border: 1px solid #8b9d83;
   border-radius: 78px;
-  padding: 30px 60px 30px 32px;
+  padding: 20px 60px 20px 32px;
   outline: none;
   cursor: pointer;
   -webkit-user-select: none;
@@ -2292,9 +2292,15 @@ button,
 }
 @media (max-width: 1199px) {
   .button {
+    padding: 21px 60px 19px 32px;
     letter-spacing: 0.5px;
-    font-size: 12px;
-    line-height: 12px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+@media (max-width: 767px) {
+  .button {
+    padding: 17px 35px 16px 12px;
   }
 }
 .button:hover:not([disabled]) {
@@ -3864,6 +3870,11 @@ button,
 @media (max-width: 1279px) {
   .hero__background {
     top: 80%;
+  }
+}
+@media (max-width: 767px) {
+  .hero__background {
+    opacity: 0.15;
   }
 }
 
