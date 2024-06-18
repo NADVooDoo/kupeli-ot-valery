@@ -3799,12 +3799,12 @@ button,
 }
 @media (max-width: 1199px) {
   .hero__button {
-    padding: 19px 21px 18px 21px;
+    padding: 21px 21px 18px 21px;
   }
 }
 @media (max-width: 767px) {
   .hero__button {
-    padding: 17px 21px 16px;
+    padding: 17px 21px 15px;
     font-size: 12px;
     line-height: 12px;
   }
