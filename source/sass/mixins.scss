@@ -102,6 +102,18 @@
   }
 }
 
+@mixin vp-929 {
+  @media (max-width: ($vp-930 - 1px)) {
+    @content;
+  }
+}
+
+@mixin vp-859 {
+  @media (max-width: ($vp-860 - 1px)) {
+    @content;
+  }
+}
+
 @mixin vp-767 {
   @media (max-width: ($vp-768 - 1px)) {
     @content;

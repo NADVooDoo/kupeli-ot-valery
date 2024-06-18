@@ -1,5 +1,5 @@
 .hero__button {
-  padding-bottom: 18px;
+  padding-top: 32px;
   padding-right : 32px;
   text-transform: uppercase;
 
@@ -25,6 +25,7 @@
 
 .hero__gallery {
   display: flex;
+  position: relative;
 
   @include vp-767 {
     flex-wrap: wrap;
@@ -46,13 +47,36 @@
   font-size: 64px;
   line-height: 64px;
 
+  @include vp-1439 {
+    font-size: 48px;
+    line-height: 52px;
+  }
+
+  @include vp-1279 {
+    font-size: 32px;
+    line-height: 35px;
+  }
+
+  @include vp-374 {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
   &-color {
     color: $color-amulet;
   }
 }
 
 .hero__content {
-  min-width: 400px;
+  min-width: 460px;
+
+  @include vp-1439 {
+    min-width: 370px;
+  }
+
+  @include vp-1279 {
+    min-width: 280px;
+  }
 
   @include vp-767 {
     order: 2;
@@ -64,4 +88,20 @@
   font-size: 28px;
   line-height: 28px;
   margin-bottom: 130px;
+
+  @include vp-1439 {
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 66px;
+  }
+
+  @include vp-1279 {
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 75px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 66px;
+  }
 }
