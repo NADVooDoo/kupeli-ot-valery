@@ -4423,6 +4423,14 @@ button,
     right: 20px;
   }
 
+  .benefits__item:nth-last-child(4) {
+    right: 10px;
+  }
+
+  .benefits__item:nth-last-child(5) {
+    right: 5px;
+  }
+
   .benefits__scrollbar {
     display: block;
     width: 100%;
