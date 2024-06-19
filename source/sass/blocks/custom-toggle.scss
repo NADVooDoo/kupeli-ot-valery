@@ -3,6 +3,14 @@
   font-size: 12px;
   line-height: 12px;
 
+  &--led {
+    padding-bottom: 10px;
+
+    @include vp-767 {
+      padding-bottom: 5px;
+    }
+  }
+
   label {
     position: relative;
     display: flex;
@@ -165,6 +173,16 @@
 
 .custom-toggle__label {
   padding-left: 30px;
+
+  &--led {
+    font-size: 15px;
+    color: $color-charcoal;
+    opacity: 0.8;
+
+    @include vp-767 {
+      font-size: 14px;
+    }
+  }
 }
 
 .custom-toggle.is-invalid .custom-toggle__icon {

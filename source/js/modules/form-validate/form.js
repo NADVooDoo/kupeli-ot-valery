@@ -1,9 +1,10 @@
-import {Validator} from './validator';
-import {callbacks} from './callback';
-import {initPhoneInput} from './init-phone-input';
-import {emailjs} from '../../vendor/email-min';
+import { Validator } from './validator';
+import { callbacks } from './callback';
+import { initPhoneInput } from './init-phone-input';
+import { emailjs } from '../../vendor/email-min';
 
 let isButtonDisabled = false;
+
 export class Form {
   constructor() {
     this._validator = new Validator();
@@ -67,6 +68,23 @@ export class Form {
       console.log('Пожалуйста, подождите...');
       return;
     }
+    // Удаляем предыдущее скрытое поле, если оно есть
+    const existingHiddenInput = event.target.querySelector('input[type="hidden"][name="led"]');
+    if (existingHiddenInput) {
+      event.target.removeChild(existingHiddenInput);
+    }
+    // Изменяем значение чекбокса перед отправкой
+    const ledCheckbox = event.target.querySelector('input[name="led"]');
+    // Устанавливаем значение чекбокса на "ДА" или "НЕТ"
+    ledCheckbox.value = ledCheckbox.checked ? 'ДА' : 'НЕТ';
+    // Добавляем скрытое поле, если чекбокс не выбран
+    if (!ledCheckbox.checked) {
+      const hiddenInput = document.createElement('input');
+      hiddenInput.type = 'hidden';
+      hiddenInput.name = 'led';
+      hiddenInput.value = 'НЕТ';
+      event.target.appendChild(hiddenInput);
+    }
 
     if (this.validateForm(event.target)) {
       isButtonDisabled = true; // Блокировать кнопку
@@ -85,7 +103,7 @@ export class Form {
               const modal = event.target.closest('.modal');
               if (modal) {
                 // Скрыть все элементы формы, заголовок и текст
-                const formElements = modal.querySelectorAll('.modal__form [data-validate-type], .modal__title, .modal__text, .modal__button');
+                const formElements = modal.querySelectorAll('.modal__form [data-validate-type], .modal__title, .modal__text, .modal__button, .custom-toggle--led');
                 formElements.forEach(element => element.style.display = 'none');
 
                 // Показать сообщение об успешной отправке
@@ -160,7 +178,7 @@ function updateSet(value) {
 
 // Добавьте эту функцию к каждому элементу списка, чтобы обновлять скрытое поле
 document.querySelectorAll('.custom-select__item').forEach(item => {
-  item.addEventListener('click', function() {
+  item.addEventListener('click', function () {
     updateSet(this.textContent);
     // Обновите также текст кнопки, чтобы отображать выбранный город
     document.querySelector('.custom-select__text').textContent = this.textContent;

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Производство чаш для уличных купелей. Тел. +7 920 952-84-21">
+  <meta name="benefits" content="Производство чаш для уличных купелей. Тел. +7 920 952-84-21">
   <title>Купели от Валеры</title>
   <link rel="preload" href="fonts/roboto-v30-cyrillic_latin-regular.woff2" type="font/woff2" as="font"
     crossorigin="anonymous">
@@ -139,7 +139,52 @@
 
       <section class="benefits">
         <div class="container">
-          <h2 class="benefits__title">Прозрачный и понятный процесс работы</h2>
+          <h2 class="benefits__title">Почему именно наша купель?</h2>
+
+          <div class="benefits__wrapper swiper" data-benefits-slider>
+            <ol class="benefits__list swiper-wrapper">
+              <li class="benefits__item swiper-slide">
+                <h3 class="benefits__item-title">Готовое решение</h3>Вам приходит полностью готовое для сборки
+                изделие
+                с&nbsp;инструкцией (пeчь, лестница, купeль с железным каркасом oбшитым деревом). Сборка занимает
+                около 15&nbsp;минут.
+              </li>
+              <li class="benefits__item swiper-slide">
+                <h3 class="benefits__item-title">Доступная цена</h3>Производим чаши для купелей сами. Вы&nbsp;не&nbsp;платите
+                посредникам и перекупщикам.
+              </li>
+              <li class="benefits__item swiper-slide">
+                <h3 class="benefits__item-title">Высокая эффективность нагрева</h3>
+                Внешняя печь банного чана с&nbsp;водяной рубашкой
+                обладает высокой мощностью нагрева на уровне 40&nbsp;кВт. Это позволяет быстро достигать желаемой
+                температуры
+                воды и&nbsp;поддерживать ее постоянной во&nbsp;время использования банного чана. Нагрев воды в чане
+                от&nbsp;0 до&nbsp;42
+                градусов происходит примерно за 3&nbsp;часа.
+              </li>
+              <li class="benefits__item swiper-slide">
+                <h3 class="benefits__item-title">Защита от замерзания</h3>Возможность слива воды с&nbsp;печи
+                в холодные
+                периоды времени
+                позволит избежать замерзания и предотвратит повреждение печи.
+              </li>
+              <li class="benefits__item swiper-slide">
+                <h3 class="benefits__item-title">Дополнительная безопасность</h3>Внешняя печь с водяной рубашкой
+                отделяется от самого банного чана, что снижает риск возгорания или&nbsp;повреждения от высоких
+                температур.
+              </li>
+              <li class="benefits__item swiper-slide">
+                <h3 class="benefits__item-title">Гибкость и удобство использования</h3>Использование внешней печи
+                банного чана с&nbsp;водяной рубашкой позволяет установить печь в любом удобном месте,
+                не ограничиваясь
+                пространством непосредственно под чашей. Это обеспечивает дополнительную гибкость
+                в планировании
+                и
+                ландшафтном дизайне.
+              </li>
+            </ol>
+          </div>
+          <div class="benefits__scrollbar" data-benefits-scrollbar></div>
         </div>
       </section>
 
@@ -196,6 +241,13 @@
               </ul>
             </div>
             <input type="hidden" name="set" id="set-hidden">
+            <div class="custom-toggle custom-toggle--secondary custom-toggle--checkbox custom-toggle--led">
+              <label>
+                <input type="checkbox" value="led" name="led">
+                <span class="custom-toggle__icon custom-toggle__icon--secondary"></span>
+                <span class="custom-toggle__label custom-toggle__label--led">С LED подстветкой (любого цвета)</span>
+              </label>
+            </div>
             <div class="custom-input custom-input--secondary" data-validate-type="text" data-required>
               <label>
                 <span class="custom-input__label custom-input__label--secondary">Укажите индекс, город и адрес
@@ -205,7 +257,8 @@
             </div>
             <div class="custom-input custom-input--secondary" data-validate-type="text">
               <label>
-                <span class="custom-input__label custom-input__label--textarea">Ваше сообщение</span>
+                <span class="custom-input__label custom-input__label--textarea">Укажите дополнительную информацию
+                  или&nbsp;задайте вопрос</span>
                 <textarea name="text" rows="5" cols="25"></textarea>
               </label>
             </div>

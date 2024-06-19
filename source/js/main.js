@@ -5,6 +5,8 @@ import {CustomSelect} from './vendor/select/custom-select';
 import {Burger} from './modules/burger/burger';
 import {initEmailJS} from './vendor/init-email';
 import {getGallerySlider} from './modules/init-gallery-swiper';
+import {getBenefitsSlider} from './modules/init-benefits-swiper';
+import {initSlider} from './modules/init-benefits-swiper';
 
 // ---------------------------------
 
@@ -31,6 +33,8 @@ window.addEventListener('DOMContentLoaded', () => {
     form.init();
     const select = new CustomSelect();
     select.init();
+    getBenefitsSlider();
+    initSlider();
   });
 });
 

@@ -1,0 +1,136 @@
+.benefits__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  height: auto;
+  counter-reset: benefits__list;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  gap: 10px;
+  row-gap: 50px;
+
+  @include vp-1199 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include vp-767 {
+    display: flex;
+  }
+}
+
+.benefits__item {
+  position: relative;
+  margin: 0;
+  margin-top: 0;
+  padding: 20px 0 20px 70px;
+  letter-spacing: 0.05px;
+
+  &::before {
+    content: counter(benefits__list);
+    counter-increment: benefits__list;
+    position: absolute;
+    text-transform: uppercase;
+    top: 60px;
+    left: 3px;
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 70px;
+    color: $color-amulet;
+
+    @include vp-1439 {
+      font-size: 64px;
+      line-height: 64px;
+      top: 50px;
+      left: -5px;
+    }
+
+    @include vp-1279 {
+      font-size: 48px;
+      line-height: 48px;
+      top: 40px;
+      left: 0;
+    }
+
+    @include vp-767 {
+      top: 20px;
+      left: -2px;
+    }
+  }
+
+  @include vp-1439 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: normal;
+    padding: 20px 0 20px 50px;
+  }
+
+  @include vp-1279 {
+    padding: 20px 0 20px 40px;
+  }
+
+  @include vp-767 {
+    padding: 0 20px 20px 40px;
+  }
+}
+
+.benefits__item:last-child {
+  @include vp-767 {
+    right: 40px;
+  }
+}
+
+.benefits__item:nth-last-child(2) {
+  @include vp-767 {
+    right: 30px;
+  }
+}
+
+.benefits__item:nth-last-child(3) {
+  @include vp-767 {
+    right: 20px;
+  }
+}
+
+.benefits__item-title {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+  letter-spacing: 0.1px;
+
+  @include vp-1439 {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  @include vp-1279 {
+    font-size: 18px;
+    line-height: 18px;
+  }
+}
+
+.benefits__scrollbar {
+  display: none;
+
+  @include vp-767 {
+    display: block;
+    width: 100%;
+    height: 6px;
+    margin: 0 0 2px;
+    background-color: $color-wan-white;
+  }
+}
+
+.benefits__wrapper {
+  width: 100%;
+
+  @include vp-767 {
+    width: 100%;
+  }
+}
+
+.benefits__scrollbar div {
+  background-color: $color-amulet;
+  border-radius: 0;
+}
