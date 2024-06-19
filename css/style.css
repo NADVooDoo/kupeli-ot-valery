@@ -2808,6 +2808,10 @@ button,
   line-height: 12px;
 }
 
+.custom-toggle--led {
+  padding-bottom: 10px;
+}
+
 .custom-toggle label {
   position: relative;
   display: -webkit-box;
@@ -2965,6 +2969,12 @@ button,
 
 .custom-toggle__label {
   padding-left: 30px;
+}
+
+.custom-toggle__label--led {
+  font-size: 15px;
+  color: #424242;
+  opacity: 0.8;
 }
 
 .custom-toggle.is-invalid .custom-toggle__icon {
@@ -3594,6 +3604,62 @@ button,
   left: -2px;
 }
 
+.benefits__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  height: auto;
+  counter-reset: benefits__list;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  gap: 10px;
+  row-gap: 50px;
+}
+
+.benefits__item {
+  position: relative;
+  margin: 0;
+  margin-top: 0;
+  padding: 20px 0 20px 70px;
+  letter-spacing: 0.05px;
+}
+
+.benefits__item::before {
+  content: counter(benefits__list);
+  counter-increment: benefits__list;
+  position: absolute;
+  text-transform: uppercase;
+  top: 60px;
+  left: 3px;
+  font-weight: 600;
+  font-size: 70px;
+  line-height: 70px;
+  color: #8b9d83;
+}
+
+.benefits__item-title {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+  letter-spacing: 0.1px;
+}
+
+.benefits__scrollbar {
+  display: none;
+}
+
+.benefits__wrapper {
+  width: 100%;
+}
+
+.benefits__scrollbar div {
+  background-color: #8b9d83;
+  border-radius: 0;
+}
+
 /* @mixin hover-focus {
     @media (hover: hover) {
       &:hover:not(.focus-visible) {
@@ -3697,6 +3763,26 @@ button,
     line-height: 24px;
     margin-bottom: 66px;
   }
+
+  .benefits__item::before {
+    font-size: 64px;
+    line-height: 64px;
+    top: 50px;
+    left: -5px;
+  }
+
+  .benefits__item {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: normal;
+    padding: 20px 0 20px 50px;
+  }
+
+  .benefits__item-title {
+    font-size: 24px;
+    line-height: 24px;
+  }
 }
 
 @media (max-width: 1279px) {
@@ -3742,6 +3828,22 @@ button,
 
   .gallery__prev {
     top: 40%;
+  }
+
+  .benefits__item::before {
+    font-size: 48px;
+    line-height: 48px;
+    top: 40px;
+    left: 0;
+  }
+
+  .benefits__item {
+    padding: 20px 0 20px 40px;
+  }
+
+  .benefits__item-title {
+    font-size: 18px;
+    line-height: 18px;
   }
 }
 
@@ -3888,6 +3990,11 @@ button,
   .hero__button {
     padding: 21px 21px 18px 21px;
   }
+
+  .benefits__list {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 929px) {
@@ -4025,7 +4132,7 @@ button,
   .custom-input--secondary textarea,
   .custom-textarea--secondary input,
   .custom-textarea--secondary textarea {
-    padding: 3px 10px 4px;
+    padding: 3px 10px 2px;
     min-height: 30px;
     border: 1px solid rgba(66, 66, 66, 0.3);
   }
@@ -4047,6 +4154,10 @@ button,
     border: 1px solid #ff5e66;
   }
 
+  .custom-toggle--led {
+    padding-bottom: 5px;
+  }
+
   .custom-toggle {
     margin: 0;
     line-height: 14px;
@@ -4059,6 +4170,10 @@ button,
   .custom-toggle--checkbox .custom-toggle__icon {
     top: calc(50% - 1px);
     border: 1px solid rgba(66, 66, 66, 0.3);
+  }
+
+  .custom-toggle__label--led {
+    font-size: 14px;
   }
 
   .custom-toggle.is-invalid .custom-toggle__icon {
@@ -4213,6 +4328,10 @@ button,
     margin: 8px 0 0;
   }
 
+  .hero {
+    padding-bottom: 50px;
+  }
+
   .hero__button {
     padding: 17px 21px 15px;
     font-size: 12px;
@@ -4236,6 +4355,10 @@ button,
 
   .hero__background {
     opacity: 0.15;
+  }
+
+  .hero__title {
+    margin-top: 5px;
   }
 
   .hero__content {
@@ -4271,6 +4394,45 @@ button,
     -ms-flex-order: 2;
     order: 2;
     margin: 0;
+  }
+
+  .benefits__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .benefits__item::before {
+    top: 20px;
+    left: -2px;
+  }
+
+  .benefits__item {
+    padding: 0 20px 20px 40px;
+  }
+
+  .benefits__item:last-child {
+    right: 40px;
+  }
+
+  .benefits__item:nth-last-child(2) {
+    right: 30px;
+  }
+
+  .benefits__item:nth-last-child(3) {
+    right: 20px;
+  }
+
+  .benefits__scrollbar {
+    display: block;
+    width: 100%;
+    height: 6px;
+    margin: 0 0 2px;
+    background-color: #e6e3db;
+  }
+
+  .benefits__wrapper {
+    width: 100%;
   }
 }
 
