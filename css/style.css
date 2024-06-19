@@ -4409,6 +4409,7 @@ button,
 
   .benefits__item {
     padding: 0 20px 20px 40px;
+    line-height: 18px;
   }
 
   .benefits__item:last-child {
