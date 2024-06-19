@@ -93,6 +93,18 @@
   }
 }
 
+.benefits__item:nth-last-child(4) {
+  @include vp-767 {
+    right: 10px;
+  }
+}
+
+.benefits__item:nth-last-child(5) {
+  @include vp-767 {
+    right: 5px;
+  }
+}
+
 .benefits__item-title {
   font-weight: 600;
   font-size: 32px;

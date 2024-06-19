@@ -4204,6 +4204,18 @@ button,
   }
 }
 
+@media (max-width: 767px) {
+  .benefits__item:nth-last-child(4) {
+    right: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .benefits__item:nth-last-child(5) {
+    right: 5px;
+  }
+}
+
 .benefits__item-title {
   font-weight: 600;
   font-size: 32px;
