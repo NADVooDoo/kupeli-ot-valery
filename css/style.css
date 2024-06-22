@@ -3604,6 +3604,10 @@ button,
   left: -2px;
 }
 
+.benefits {
+  position: relative;
+}
+
 .benefits__list {
   margin: 0;
   padding: 0;
@@ -3632,7 +3636,7 @@ button,
   counter-increment: benefits__list;
   position: absolute;
   text-transform: uppercase;
-  top: 60px;
+  top: 30px;
   left: 3px;
   font-weight: 600;
   font-size: 70px;
@@ -3645,6 +3649,7 @@ button,
   font-size: 32px;
   line-height: 32px;
   letter-spacing: 0.1px;
+  margin-top: 0;
 }
 
 .benefits__scrollbar {
@@ -3658,6 +3663,18 @@ button,
 .benefits__scrollbar div {
   background-color: #8b9d83;
   border-radius: 0;
+}
+
+.benefits__background {
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 /* @mixin hover-focus {
@@ -3767,7 +3784,6 @@ button,
   .benefits__item::before {
     font-size: 64px;
     line-height: 64px;
-    top: 50px;
     left: -5px;
   }
 
@@ -3833,7 +3849,7 @@ button,
   .benefits__item::before {
     font-size: 48px;
     line-height: 48px;
-    top: 40px;
+    top: 25px;
     left: 0;
   }
 
@@ -4403,7 +4419,7 @@ button,
   }
 
   .benefits__item::before {
-    top: 20px;
+    top: 0;
     left: -2px;
   }
 
@@ -4413,23 +4429,23 @@ button,
   }
 
   .benefits__item:last-child {
-    right: 40px;
+    right: 50px;
   }
 
   .benefits__item:nth-last-child(2) {
-    right: 30px;
+    right: 40px;
   }
 
   .benefits__item:nth-last-child(3) {
-    right: 20px;
+    right: 30px;
   }
 
   .benefits__item:nth-last-child(4) {
-    right: 10px;
+    right: 20px;
   }
 
   .benefits__item:nth-last-child(5) {
-    right: 5px;
+    right: 10px;
   }
 
   .benefits__scrollbar {
@@ -4442,6 +4458,16 @@ button,
 
   .benefits__wrapper {
     width: 100%;
+  }
+
+  .benefits__background {
+    top: 70%;
+  }
+}
+
+@media (max-width: 429px) {
+  .benefits__background {
+    top: 80%;
   }
 }
 
