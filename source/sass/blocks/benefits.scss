@@ -1,3 +1,7 @@
+.benefits {
+  position: relative;
+}
+
 .benefits__list {
   margin: 0;
   padding: 0;
@@ -31,7 +35,7 @@
     counter-increment: benefits__list;
     position: absolute;
     text-transform: uppercase;
-    top: 60px;
+    top: 30px;
     left: 3px;
     font-weight: 600;
     font-size: 70px;
@@ -41,19 +45,18 @@
     @include vp-1439 {
       font-size: 64px;
       line-height: 64px;
-      top: 50px;
       left: -5px;
     }
 
     @include vp-1279 {
       font-size: 48px;
       line-height: 48px;
-      top: 40px;
+      top: 25px;
       left: 0;
     }
 
     @include vp-767 {
-      top: 20px;
+      top: 0;
       left: -2px;
     }
   }
@@ -78,31 +81,31 @@
 
 .benefits__item:last-child {
   @include vp-767 {
-    right: 40px;
+    right: 50px;
   }
 }
 
 .benefits__item:nth-last-child(2) {
   @include vp-767 {
-    right: 30px;
+    right: 40px;
   }
 }
 
 .benefits__item:nth-last-child(3) {
   @include vp-767 {
-    right: 20px;
+    right: 30px;
   }
 }
 
 .benefits__item:nth-last-child(4) {
   @include vp-767 {
-    right: 10px;
+    right: 20px;
   }
 }
 
 .benefits__item:nth-last-child(5) {
   @include vp-767 {
-    right: 5px;
+    right: 10px;
   }
 }
 
@@ -111,6 +114,7 @@
   font-size: 32px;
   line-height: 32px;
   letter-spacing: 0.1px;
+  margin-top: 0;
 
   @include vp-1439 {
     font-size: 24px;
@@ -146,4 +150,22 @@
 .benefits__scrollbar div {
   background-color: $color-amulet;
   border-radius: 0;
+}
+
+.benefits__background {
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @include vp-767 {
+    top: 70%;
+  }
+
+  @include vp-429{
+    top: 80%;
+  }
 }
