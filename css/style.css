@@ -3963,6 +3963,11 @@ button,
     line-height: 36px;
   }
 
+  .contacts__list {
+    padding-bottom: 40px;
+    gap: 40px;
+  }
+
   .contacts__subheader {
     font-size: 24px;
     line-height: 24px;
@@ -4200,9 +4205,22 @@ button,
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .contacts__pic {
+    height: 80px;
+  }
+
+  .contacts__pic svg {
+    height: 80px;
+  }
+
   .contacts__header {
     font-size: 24px;
     line-height: 24px;
+  }
+
+  .contacts__list {
+    padding-bottom: 30px;
+    gap: 30px;
   }
 
   .contacts__subheader {
@@ -4227,6 +4245,10 @@ button,
     width: 180px;
     height: 40px;
     font-size: 15px;
+  }
+
+  .contacts__background {
+    top: 20%;
   }
 }
 
@@ -4689,6 +4711,8 @@ button,
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    padding-bottom: 20px;
+    gap: 20px;
   }
 
   .contacts__map {
@@ -4696,16 +4720,12 @@ button,
   }
 
   .contacts__background {
-    top: 70%;
+    top: 4%;
   }
 }
 
 @media (max-width: 429px) {
   .benefits__background {
-    top: 80%;
-  }
-
-  .contacts__background {
     top: 80%;
   }
 }
