@@ -7,6 +7,7 @@ import {initEmailJS} from './vendor/init-email';
 import {getGallerySlider} from './modules/init-gallery-swiper';
 import {getBenefitsSlider} from './modules/init-benefits-swiper';
 import {initSlider} from './modules/init-benefits-swiper';
+import {getMap} from './modules/init-contacts-map';
 
 // ---------------------------------
 
@@ -35,6 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
     select.init();
     getBenefitsSlider();
     initSlider();
+    getMap();
   });
 });
 
