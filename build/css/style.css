@@ -3801,6 +3801,11 @@ button,
   color: #316dc2;
 }
 
+.contacts__mail svg {
+  position: relative;
+  top: 10px;
+}
+
 .contacts__tel-link svg {
   position: relative;
   top: 4px;
