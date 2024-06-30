@@ -3806,7 +3806,7 @@ button,
   top: 4px;
 }
 
-.contact__button {
+.contacts__button {
   font-weight: 400;
   font-size: 18px;
   color: #686656;
@@ -4238,7 +4238,7 @@ button,
     line-height: 16px;
   }
 
-  .contact__button {
+  .contacts__button {
     border: 2px solid #8b9d83;
     border-radius: 50px;
     padding: 10px 15px 11px 15px;
@@ -4712,14 +4712,14 @@ button,
     -ms-flex-align: center;
     align-items: center;
     padding-bottom: 20px;
-    gap: 20px;
+    gap: 40px;
   }
 
   .contacts__map {
     height: 318px;
   }
 
-  .contact__button {
+  .contacts__button {
     border: 2px solid #8b9d83;
     border-radius: 50px;
     padding: 11px 15px 11px 15px;
