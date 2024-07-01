@@ -3758,11 +3758,12 @@ button,
 }
 
 .contacts__text {
+  margin: 0;
   font-weight: 400;
   font-size: 28px;
   line-height: 28px;
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .contacts__adress {
@@ -3822,6 +3823,7 @@ button,
   height: 63px;
   padding: 21px 52px;
   margin: 0 auto;
+  margin-top: 10px;
 }
 
 .contacts__background {
@@ -3938,6 +3940,11 @@ button,
     font-size: 24px;
     line-height: 24px;
     margin-bottom: 66px;
+  }
+
+  .benefits__title {
+    font-size: 36px;
+    line-height: 36px;
   }
 
   .benefits__item::before {
@@ -4205,6 +4212,12 @@ button,
     padding: 21px 21px 18px 21px;
   }
 
+  .benefits__title {
+    font-size: 24px;
+    line-height: 24px;
+    padding-bottom: 20px;
+  }
+
   .benefits__list {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
@@ -4241,6 +4254,10 @@ button,
   .contacts__adress {
     font-size: 14px;
     line-height: 16px;
+  }
+
+  .contacts__mail {
+    margin-top: -10px;
   }
 
   .contacts__button {
