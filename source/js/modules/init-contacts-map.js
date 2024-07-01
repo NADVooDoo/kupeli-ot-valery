@@ -12,7 +12,7 @@ const getMap = () => {
   const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
   const markerText = `
   <p>г. Рязань, ул. Прижелезнодорожная 30</p>
-  <p>Номера телефона: <a href="tel:+79209528421">+7 920 952 84 21</a><a href="tel:+79036816874">+7 903 681 68 74</a></p>
+  <p>Номера телефонов:<br><a href="tel:+79209528421">+7 920 952 84 21</a><br><a href="tel:+79036816874">+7 903 681 68 74</a></p>
   `;
 
   const map = createMap('map', {
