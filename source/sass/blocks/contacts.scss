@@ -1,5 +1,6 @@
 .contacts {
   position: relative;
+  margin-bottom: 50px;
 }
 
 .contacts__pic {
@@ -59,6 +60,8 @@
     align-items: center;
     padding-bottom: 20px;
     gap: 40px;
+    left: -10px;
+    position: relative;
   }
 }
 

@@ -1,0 +1,179 @@
+.footer {
+  padding-top: 50px;
+  border-top: 4px solid $color-amulet;
+  margin-bottom: 30px;
+}
+
+.footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  @include vp-1199 {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+
+  @include vp-767 {
+    gap: 0;
+  }
+}
+
+.footer__logo {
+  max-width: 300px;
+  font-weight: 400;
+  font-size: 14px;
+
+  @include vp-1199 {
+    order: 3;
+  }
+}
+
+
+.footer__logo-link svg {
+  @include vp-1199 {
+    width: 200px;
+  }
+
+  @include vp-767 {
+    width: 132px;
+  }
+}
+
+.footer__nav {
+  position: relative;
+  margin-top: 25px;
+  max-width: 400px;
+  right: 100px;
+
+  @include vp-1439 {
+    max-width: 350px;
+    right: 0;
+  }
+}
+
+.footer__nav-list {
+  font-weight: 400;
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 70px;
+  flex-wrap: wrap;
+
+  @include vp-1439 {
+    font-size: 20px;
+    gap: 35px;
+  }
+
+  @include vp-767 {
+    gap: 20px;
+    max-width: 280px;
+    margin-bottom: 50px;
+  }
+}
+
+.footer__nav-item {
+  position: relative;
+}
+
+.footer__nav-link {
+  color: $color-charcoal;
+
+  &::before {
+    content: "";
+    position: absolute;
+    transition: background-color $trans-default;
+  }
+
+  @include focus {
+    outline: 2px solid $color-amulet;
+  }
+
+  @include hover {
+    &::before {
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $color-amulet;
+    }
+
+    opacity: 0.9;
+  }
+
+  @include active {
+    &::before {
+      background-color: $color-transparent;
+    }
+
+    color: $color-cerulean-blue;
+  }
+}
+
+.footer__contacts {
+  margin-top: 20px;
+
+  @include vp-1439 {
+    min-width: 280px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 30px;
+  }
+}
+
+.footer__tel-link {
+  font-weight: 400;
+  font-size: 24px;
+
+  @include vp-1439 {
+    font-size: 20px;
+  }
+
+  @include hover-focus {
+    color: $color-amulet;
+    outline: none;
+  }
+
+  @include active {
+    color: $color-cerulean-blue;
+  }
+}
+
+.footer__tel-link svg {
+  top: 4px;
+  position: relative;
+}
+
+.footer__mail {
+  font-weight: 400;
+  font-size: 24px;
+
+  @include vp-1439 {
+    font-size: 20px;
+  }
+
+  @include hover-focus {
+    color: $color-amulet;
+    outline: none;
+  }
+
+  @include active {
+    color: $color-cerulean-blue;
+  }
+}
+
+.footer__mail svg {
+  top: 12px;
+  position: relative;
+}
+
+.footer__adress {
+  font-weight: 400;
+  font-size: 24px;
+
+  @include vp-1439 {
+    font-size: 20px;
+  }
+}
