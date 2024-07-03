@@ -3246,7 +3246,7 @@ button,
   color: inherit;
   z-index: 3;
   position: relative;
-  top: -10px;
+  top: -5px;
 }
 
 .header__logo-link:hover:not([disabled]) {
@@ -3864,7 +3864,7 @@ button,
   position: relative;
   margin-top: 25px;
   max-width: 400px;
-  right: 100px;
+  right: 80px;
 }
 
 .footer__nav-list {
@@ -4143,6 +4143,10 @@ button,
     width: 100vw;
   }
 
+  .footer__logo-link svg {
+    width: 260px;
+  }
+
   .footer__nav {
     max-width: 350px;
     right: 0;
@@ -4154,7 +4158,7 @@ button,
   }
 
   .footer__contacts {
-    min-width: 280px;
+    min-width: 310px;
   }
 
   .footer__tel-link {
@@ -4279,7 +4283,7 @@ button,
   }
 
   .header__logo-link svg {
-    width: 200px;
+    width: 300px;
   }
 
   .header__toggle {
@@ -4451,7 +4455,7 @@ button,
   }
 
   .footer__logo-link svg {
-    width: 200px;
+    width: 300px;
   }
 }
 
@@ -4725,11 +4729,11 @@ button,
   }
 
   .header__logo-link {
-    top: -5px;
+    top: -2px;
   }
 
   .header__logo-link svg {
-    width: 132px;
+    width: 200px;
   }
 
   .header__toggle {
@@ -4943,7 +4947,7 @@ button,
   }
 
   .footer__logo-link svg {
-    width: 132px;
+    width: 250px;
   }
 
   .footer__nav-list {
