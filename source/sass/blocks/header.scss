@@ -21,10 +21,10 @@
   color: inherit;
   z-index: 3;
   position: relative;
-  top: -10px;
+  top: -5px;
 
   @include vp-767 {
-    top: -5px;
+    top: -2px;
   }
 
   @include hover-focus {
@@ -39,11 +39,11 @@
 
 .header__logo-link svg {
   @include vp-1199 {
-    width: 200px;
+    width: 300px;
   }
 
   @include vp-767 {
-    width: 132px;
+    width: 200px;
   }
 }
 

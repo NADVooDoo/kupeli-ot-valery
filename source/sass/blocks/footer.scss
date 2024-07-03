@@ -30,12 +30,16 @@
 
 
 .footer__logo-link svg {
+  @include vp-1439 {
+    width: 260px;
+  }
+
   @include vp-1199 {
-    width: 200px;
+    width: 300px;
   }
 
   @include vp-767 {
-    width: 132px;
+    width: 250px;
   }
 }
 
@@ -43,7 +47,7 @@
   position: relative;
   margin-top: 25px;
   max-width: 400px;
-  right: 100px;
+  right: 80px;
 
   @include vp-1439 {
     max-width: 350px;
@@ -115,7 +119,7 @@
   margin-top: 20px;
 
   @include vp-1439 {
-    min-width: 280px;
+    min-width: 310px;
   }
 
   @include vp-767 {
