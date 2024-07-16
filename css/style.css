@@ -3977,6 +3977,91 @@ button,
   font-size: 24px;
 }
 
+.specifications__title {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 48px;
+}
+
+.price {
+  margin-bottom: 50px;
+}
+
+.price__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-bottom: 30px;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 48px;
+  margin: 0;
+}
+
+.price__wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 75px;
+  grid-row-gap: 50px;
+}
+
+.price__column {
+  position: relative;
+  border: 4px solid #8b9d83;
+  border-radius: 17px;
+  padding: 50px;
+}
+
+.price__column-title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 32px;
+  margin-bottom: 30px;
+}
+
+.price__table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.price__table-column {
+  font-size: 18px;
+  padding: 2px;
+  text-align: left;
+}
+
+.price__table-column--price {
+  width: 85px;
+}
+
+tr td.price__table-column.price__table-column--first {
+  padding-top: 20px;
+}
+
+th.price__table-column {
+  padding-bottom: 15px;
+  border-bottom: 2px dashed #8b9d83;
+}
+
+.price__button {
+  position: absolute;
+  bottom: 50px;
+}
+
+.price__background {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
 /* @mixin hover-focus {
     @media (hover: hover) {
       &:hover:not(.focus-visible) {
@@ -4171,6 +4256,30 @@ button,
 
   .footer__adress {
     font-size: 20px;
+  }
+
+  .specifications__title {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  .price__title {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  .price__column {
+    border: 3px solid #8b9d83;
+    padding: 44px;
+  }
+
+  .price__column-title {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  .price__table-column {
+    font-size: 16px;
   }
 }
 
@@ -4456,6 +4565,34 @@ button,
 
   .footer__logo-link svg {
     width: 300px;
+  }
+
+  .specifications__title {
+    font-size: 24px;
+    line-height: 24px;
+    padding-bottom: 20px;
+  }
+
+  .price__title {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  .price__wrapper {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .price__table {
+    margin-bottom: 70px;
+  }
+
+  .price__table-column {
+    font-size: 14px;
+  }
+
+  .price__button {
+    bottom: 30px;
   }
 }
 
@@ -4960,6 +5097,14 @@ button,
     margin: 0 auto;
     margin-bottom: 30px;
     text-align: center;
+  }
+
+  .price__column {
+    padding: 22px;
+  }
+
+  .price__button {
+    width: 85%;
   }
 }
 
