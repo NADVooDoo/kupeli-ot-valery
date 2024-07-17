@@ -6021,6 +6021,7 @@ th.price__table-column {
 }
 
 .documents__item:nth-last-child(-n+2) img {
+  margin-left: 150px;
   width: 80%;
 }
 
