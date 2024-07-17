@@ -8,6 +8,9 @@ import {getGallerySlider} from './modules/init-gallery-swiper';
 import {getBenefitsSlider} from './modules/init-benefits-swiper';
 import {initSlider} from './modules/init-benefits-swiper';
 import {getMap} from './modules/init-contacts-map';
+import {getDocumentsSlider} from './modules/init-documents-swiper';
+import {Fancybox} from './vendor/fancybox'
+
 
 // ---------------------------------
 
@@ -36,7 +39,10 @@ window.addEventListener('DOMContentLoaded', () => {
     select.init();
     getBenefitsSlider();
     initSlider();
+    getDocumentsSlider();
     getMap();
+    Fancybox.bind("[data-fancybox]", {
+    });
   });
 });
 
