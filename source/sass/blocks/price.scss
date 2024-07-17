@@ -91,6 +91,11 @@
 
   &--price {
     width: 85px;
+    text-align: right;
+
+    @include vp-767 {
+      width: 70px;
+    }
   }
 }
 
@@ -121,4 +126,12 @@ th.price__table-column {
   bottom: 0;
   right: 0;
   z-index: -1;
+
+  @include vp-1199 {
+    width: 270px;
+  }
+
+  @include vp-767 {
+    width: 200px;
+  }
 }

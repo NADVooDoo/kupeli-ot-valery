@@ -5942,6 +5942,7 @@ button,
 
 .price__table-column--price {
   width: 85px;
+  text-align: right;
 }
 
 tr td.price__table-column.price__table-column--first {
@@ -6605,6 +6606,10 @@ th.price__table-column {
     bottom: 30px;
   }
 
+  .price__background {
+    width: 270px;
+  }
+
   .documents__prev {
     padding: 21px 32px 19px 60px;
     letter-spacing: 0.5px;
@@ -7067,6 +7072,10 @@ th.price__table-column {
     top: 70%;
   }
 
+  .contacts__pic {
+    margin-top: 5px;
+  }
+
   .contacts__list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -7153,8 +7162,16 @@ th.price__table-column {
     padding-bottom: 10px;
   }
 
+  .price__table-column--price {
+    width: 70px;
+  }
+
   .price__button {
     width: 85%;
+  }
+
+  .price__background {
+    width: 200px;
   }
 
   .documents__prev,
