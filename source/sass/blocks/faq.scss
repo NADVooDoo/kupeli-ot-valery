@@ -1,0 +1,353 @@
+.faq {
+  background-color: $color-desert-storm;
+}
+
+.faq__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 61px;
+  padding-bottom: 62px;
+  gap: 30px 0;
+
+  @include vp-1199 {
+    padding-top: 49px;
+    padding-bottom: 50px;
+    gap: 41px 0;
+  }
+
+  @include vp-767 {
+    padding-top: 34px;
+    padding-bottom: 35px;
+    gap: 33px 0;
+  }
+}
+
+.faq__header {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 48px;
+  margin: 0;
+
+  @include vp-1439 {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  @include vp-1199 {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  width: 1028px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  gap: 10px 0;
+
+  @include vp-1199 {
+    width: 100%;
+  }
+}
+
+.faq__item {
+  border: 4px solid $color-amulet;
+  border-radius: 16px;
+  transition: background-color $trans-default;
+  cursor: pointer;
+
+  &:not(.is-active) {
+    &:has(.faq__button:active) {
+      .faq__details-question {
+        color: $color-cerulean-blue;
+      }
+    }
+
+    @include hover-focus-within {
+      background-color: $color-default-white;
+
+      .faq__button {
+        background-color: $color-default-white;
+        border-color: $color-amulet;
+
+        &::before,
+        &::after {
+          background-color: $color-amulet;
+        }
+
+        @include active {
+          background-color: $color-cerulean-blue;
+          border-color: $color-cerulean-blue;
+
+          &::before,
+          &::after {
+            background-color: $color-default-white;
+          }
+        }
+      }
+    }
+
+    @include active {
+      .faq__details-question {
+        color: $color-cerulean-blue;
+      }
+
+      .faq__button {
+        background-color: $color-cerulean-blue;
+        border-color: $color-cerulean-blue;
+
+        &::before,
+        &::after {
+          background-color: $color-default-white;
+        }
+      }
+    }
+  }
+
+  @include vp-1439 {
+    border: 3px solid $color-amulet;
+  }
+
+  @include vp-767 {
+    border-radius: 14px;
+  }
+}
+
+.faq__item.is-active {
+  background-color: $color-amulet;
+
+  &:has(.faq__button:active) {
+    background-color: $color-cerulean-blue;
+  }
+
+  @include hover-focus-within {
+    .faq__button {
+      background-color: $color-transparent;
+      border-color: $color-default-white;
+
+      &::before {
+        background-color: $color-default-white;
+      }
+    }
+  }
+
+  @include active {
+    background-color: $color-xanadu;
+
+    .faq__button {
+      background-color: $color-default-white;
+      border-color: $color-default-white;
+
+      &::before {
+        background-color: $color-cerulean-blue;
+      }
+    }
+  }
+}
+
+.faq__details {
+  padding: 25px;
+
+  @include vp-1199 {
+    padding: 20px;
+  }
+
+  @include vp-767 {
+    padding: 19px 14px;
+  }
+}
+
+.faq__item.is-active .faq__details {
+  padding-bottom: 32px;
+
+  @include vp-1199 {
+    padding-bottom: 25px;
+  }
+
+  @include vp-767 {
+    padding-bottom: 14px;
+  }
+}
+
+.faq__details-info {
+  display: flex;
+  justify-content: space-between;
+
+  @include vp-767 {
+    align-items: center;
+  }
+}
+
+.faq__details-question {
+  align-self: center;
+  max-width: 65%;
+  margin: -7px 0;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 34px;
+  color: $color-charcoal;
+  transition: color $trans-default;
+
+  @include vp-1199 {
+    max-width: 80%;
+    margin: -5px 0;
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  @include vp-767 {
+    max-width: 75%;
+    margin: 0;
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
+.faq__button {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: $color-amulet;
+  border: 1px solid $color-amulet;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  transition: background-color $trans-default;
+
+  &::before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    background-color: $color-default-white;
+    inset: 0;
+    top: calc(50% - 18px);
+    left: calc(50% - 18px);
+    height: 1px;
+    width: 18px;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 1px;
+    margin: auto;
+    background-color: $color-default-white;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    inset: 0;
+    transform: rotate(90deg);
+  }
+
+  @include hover-focus {
+    background-color: $color-transparent;
+
+    &::before,
+    &::after {
+      background-color: $color-amulet;
+    }
+  }
+
+  @include active {
+    background-color: $color-cerulean-blue;
+    border-color: $color-cerulean-blue;
+
+    &::before,
+    &::after {
+      background-color: $color-default-white;
+    }
+  }
+
+  @include disabled {
+    background-color: $color-mischka;
+    border-color: $color-mischka;
+    pointer-events: none;
+
+    &::before,
+    &::after {
+      background-color: $color-default-white;
+    }
+  }
+}
+
+.faq__item.is-active .faq__content {
+  margin: 13px 0 0;
+  max-height: 100%;
+  color: $color-linen;
+
+  @include vp-1199 {
+    margin: 16px 0 0;
+  }
+
+  @include vp-767 {
+    margin: 15px 0 0;
+  }
+}
+
+.faq__item.is-active .faq__details-info {
+  .faq__details-question {
+    color: $color-linen;
+  }
+}
+
+.faq__item.is-active .faq__button {
+  border-color: $color-default-white;
+  background-color: $color-default-white;
+
+  &::before {
+    transform: rotate(360deg);
+    background-color: $color-amulet;
+  }
+
+  &::after {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+
+  @include hover-focus {
+    background-color: $color-transparent;
+
+    &::before {
+      background-color: $color-default-white;
+    }
+  }
+
+  @include active {
+    border-color: $color-default-white;
+    background-color: $color-default-white;
+
+    &::before {
+      background-color: $color-cerulean-blue;
+    }
+  }
+}
+
+.faq__content {
+  overflow: hidden;
+  max-height: 0;
+  transition: all $trans-default;
+}
+
+.faq__content-text {
+  max-width: 70%;
+  margin: 0;
+  color: $color-default-white;
+
+  @include vp-1199 {
+    max-width: 85%;
+    line-height: 20px;
+  }
+
+  @include vp-767 {
+    max-width: 97%;
+    font-size: 14px;
+  }
+}

@@ -43,10 +43,8 @@
 }
 
 .footer__nav {
-  position: relative;
   margin-top: 25px;
-  max-width: 400px;
-  right: 80px;
+  max-width: 600px;
 
   @include vp-1439 {
     max-width: 350px;
@@ -61,8 +59,9 @@
   padding: 0;
   list-style: none;
   display: flex;
-  gap: 70px;
+  gap: 40px;
   flex-wrap: wrap;
+  justify-content: center;
 
   @include vp-1439 {
     font-size: 20px;

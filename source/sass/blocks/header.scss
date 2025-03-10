@@ -38,6 +38,10 @@
 }
 
 .header__logo-link svg {
+  @include vp-1439 {
+    width: 260px;
+  }
+
   @include vp-1199 {
     width: 300px;
   }

@@ -61,22 +61,24 @@ export class Form {
     return this._validator.validateFormElement(item);
   }
 
-  _onFormSubmit(event, callback = null) {
+  async _onFormSubmit(event, callback = null) {
     event.preventDefault(); // Предотвратить стандартную отправку формы
 
     if (isButtonDisabled) {
       console.log('Пожалуйста, подождите...');
       return;
     }
+
     // Удаляем предыдущее скрытое поле, если оно есть
     const existingHiddenInput = event.target.querySelector('input[type="hidden"][name="led"]');
     if (existingHiddenInput) {
       event.target.removeChild(existingHiddenInput);
     }
+
     // Изменяем значение чекбокса перед отправкой
     const ledCheckbox = event.target.querySelector('input[name="led"]');
-    // Устанавливаем значение чекбокса на "ДА" или "НЕТ"
     ledCheckbox.value = ledCheckbox.checked ? 'ДА' : 'НЕТ';
+
     // Добавляем скрытое поле, если чекбокс не выбран
     if (!ledCheckbox.checked) {
       const hiddenInput = document.createElement('input');
@@ -88,44 +90,39 @@ export class Form {
 
     if (this.validateForm(event.target)) {
       isButtonDisabled = true; // Блокировать кнопку
-      // Отправка данных формы с помощью EmailJS
-      emailjs.sendForm('service_2hoknrq', 'template_qnmamf8', event.target)
-        .then((response) => {
-          console.log('Заявка успешно отправлена!', response.status, response.text);
-          // Вызов callback функции, если форма валидна и callback определен
-          if (callback) {
-            this._callbacks[callback].successCallback(event);
-          }
-          // Логика перестроения модального окна
-          if (this._callbacks[callback].reset) {
-            setTimeout(() => {
-              this.reset(event.target);
-              const modal = event.target.closest('.modal');
-              if (modal) {
-                // Скрыть все элементы формы, заголовок и текст
-                const formElements = modal.querySelectorAll('.modal__form [data-validate-type], .modal__title, .modal__text, .modal__button, .custom-toggle--led');
-                formElements.forEach(element => element.style.display = 'none');
 
-                // Показать сообщение об успешной отправке
-                const successMessage = modal.querySelector('.modal__success');
-                successMessage.style.display = 'block';
-              }
-            }, this._callbacks[callback].resetTimeout ? this._callbacks[callback].resetTimeout : 500);
-          }
-        }, (error) => {
-          console.log('Заявка застряла в интернете...', error);
-          // Вызов callback функции ошибки, если форма не валидна и callback определен
-          if (callback) {
-            this._callbacks[callback].errorCallback(event);
-          }
-        })
-        .finally(() => {
-          setTimeout(() => {
-            isButtonDisabled = false; // Разблокировать кнопку после 5 секунд
-          }, 5000);
+      // Показываем сообщение об успешной отправке сразу
+      const modal = event.target.closest('.modal');
+      if (modal) {
+        const formElements = modal.querySelectorAll('.modal__form [data-validate-type], .modal__title, .modal__text, .modal__button, .custom-toggle--led');
+        formElements.forEach(element => element.style.display = 'none');
+
+        const successMessage = modal.querySelector('.modal__success');
+        successMessage.style.display = 'block';
+      }
+
+      try {
+        // Отправка данных формы с помощью EmailJS с таймаутом
+        const emailPromise = emailjs.sendForm('service_sxq6oq8', 'template_qnmamf8', event.target);
+        const timeoutPromise = new Promise((_, reject) => {
+          setTimeout(() => reject(new Error('Таймаут запроса')), 10000); // Таймаут 10 секунд
         });
+
+        const response = await Promise.race([emailPromise, timeoutPromise]);
+        console.log('Заявка успешно отправлена!', response.status, response.text);
+
+        if (callback) {
+          this._callbacks[callback].successCallback(event);
+        }
+      } catch (error) {
+        console.log('Ошибка при отправке формы:', error);
+        if (callback) {
+          this._callbacks[callback].errorCallback(event);
+        }
+      } finally {
+        isButtonDisabled = false; // Разблокировать кнопку
+      }
     } else {
-      // Если форма не валидна, вызов callback функции ошибки
       if (callback) {
         this._callbacks[callback].errorCallback(event);
       }
@@ -171,16 +168,13 @@ export class Form {
   }
 }
 
-// Функция для обновления скрытого поля при выборе комплекта
 function updateSet(value) {
   document.getElementById('set-hidden').value = value;
 }
 
-// Добавьте эту функцию к каждому элементу списка, чтобы обновлять скрытое поле
 document.querySelectorAll('.custom-select__item').forEach(item => {
   item.addEventListener('click', function () {
     updateSet(this.textContent);
-    // Обновите также текст кнопки, чтобы отображать выбранный город
     document.querySelector('.custom-select__text').textContent = this.textContent;
   });
 });

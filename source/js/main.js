@@ -7,6 +7,7 @@ import {initEmailJS} from './vendor/init-email';
 import {getGallerySlider} from './modules/init-gallery-swiper';
 import {getBenefitsSlider} from './modules/init-benefits-swiper';
 import {initSlider} from './modules/init-benefits-swiper';
+import {initAccordions} from './modules/init-faq-tabs';
 import {getMap} from './modules/init-contacts-map';
 import {getDocumentsSlider} from './modules/init-documents-swiper';
 import {Fancybox} from './vendor/fancybox'
@@ -39,6 +40,7 @@ window.addEventListener('DOMContentLoaded', () => {
     select.init();
     getBenefitsSlider();
     initSlider();
+    initAccordions();
     getDocumentsSlider();
     getMap();
     Fancybox.bind("[data-fancybox]", {
